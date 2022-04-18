@@ -8,8 +8,23 @@ function App() {
   const [description, setDescription] = useState("");
   const [blog, setBlog] = useState([]);
 
+  console.log(input);
+  console.log(description);
+
   function addBlog() {
-    setBlog([...blog, input, description]);
+    if (!input) {
+    } else {
+      setBlog([...blog, input, description]);
+      setInput("");
+      setDescription("");
+    }
+  }
+  function deleteBlog(id) {
+    console.log(id);
+    const delBLog = blog.filter((ele, ind) => {
+      return ind !== id;
+    });
+    setBlog(delBLog);
   }
 
   return (
@@ -33,11 +48,17 @@ function App() {
         </button>
       </div>
       <div className="blogs">
-        <div className="eachBlog">
-          <h3>hello</h3>
-          <button className="delete-btn">Delete</button>
-          <button className="edit-btn">Edit</button>
-        </div>
+        {blog.map((ele, ind) => {
+          return (
+            <div className="eachBlog" key={ind}>
+              <h3>{ele}</h3>
+              <button className="delete-btn" onClick={() => deleteBlog(ind)}>
+                Delete
+              </button>
+              <button className="edit-btn">Edit</button>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
