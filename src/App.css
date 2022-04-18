@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+body {
+  background-color: rgb(141, 140, 140);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container > h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  padding: 10px;
+  margin: 10px;
+}
+.description {
+  padding: 10px;
+  margin: 10px;
+}
+.btn {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: rgb(103, 103, 233);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.blogs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.delete-btn {
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  margin: 10px;
+}
+.edit-btn {
+  padding: 10px;
+  background-color: rgb(95, 95, 226);
+  color: white;
+  border-radius: 10px;
 }
